@@ -1,0 +1,78 @@
+﻿@model MessageModel
+
+<link rel="stylesheet" href="~/css/ChatStyle.css"/>
+
+<div class="row p-0 m-0 w-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom p-0 m-0" id="NavBarContent">
+        <div class="navbar-collapse" id="navbarSupportedContent">
+            <div class="col-lg-3 p-0 m-0 border-end">
+                
+            </div>
+
+            <div class="col-lg-9 d-flex align-items-center justify-content-center pe-0">
+                <span class="navbar-text p-0">
+                    <partial name="_LoginPartial" />
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid p-0 m-0">
+        <div class="row p-0 m-0">
+
+            <div class="container chat-container p-0 m-0 col-lg-3 d-flex flex-column" id="PlaceForChats">
+                <div class="d-flex justify-content-between p-2">
+                    <h1>Chats</h1>
+                    <button class="btn btn-primary add-friend-button" id="addFriendLink">Add Friend</button>
+                </div>
+
+                <div class="chat-list p-2" id="newChats">
+                    @foreach (var chat in ViewBag.Chats)
+                    {
+                        <a href="#" class="list-group-item list-group-item-action" onclick="ChooseChat('@chat.ChatId')">@chat.ChatName</a>
+                    }
+                </div>
+            </div>
+
+            <div class="container col-lg-9 align-content-center">
+                <div id="messagesForm" style="display: none;">
+                    <div class="header col">
+                        <h1 class="text-center">Чат</h1>
+                    </div>
+
+                        <div class="message-list h-100" id="messagePlace">
+                            
+                        </div>
+
+                        <div class="input-group form" id="sendMessageForm">
+                            <input type="text" id="messageInput" class="form-control" placeholder="Введіть повідомлення...">
+                            <div class="input-group-append">
+                                <button type="button" id="sendMessageBtn" class="btn btn-primary send-button">Send</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="addFriendModal" class="customModal" style="display: none;">
+    <div class="card cardProps">
+        <div class="form card-body" id="addFriendForm">
+            <div class="row">
+                <div class="form-group col">
+                    <input type="text" id="friendNameInput" class="form-control" placeholder="Введіть ім'я користувача">
+                </div>
+                <div class="col-auto">
+                    <button type="button" id="addFriendBtn" class="btn btn-primary me-1">Додати</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+<script src="~/js/ChatScriptForStyle.js?v=1.0"></script>
+<script src="~/js/ChatScript.js?v=1.0"></script>

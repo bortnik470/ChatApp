@@ -1,0 +1,98 @@
+﻿body {
+}
+
+.customModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    z-index: 9999;
+}
+
+.cardProps {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40rem;
+    background-color: whitesmoke;
+}
+
+#MainContent {
+    overflow-y: hidden;
+}
+
+#PlaceForChats {
+    overflow-x: hidden;
+}
+
+.chat-container {
+    background-color: #f5f5f5;
+    border-right: 1px solid #ccc;
+}
+
+.chat-list {
+    padding: 0;
+    margin: 0;
+}
+
+.chat-item {
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #333;
+}
+
+    .chat-item.active {
+        background-color: #ebebeb;
+    }
+
+.add-friend-button {
+    padding: 8px 12px;
+    background-color: #ccc;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.message-list {
+    max-height: 85%;
+    overflow-y: scroll;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+.message-sender {
+    font-weight: bold;
+}
+
+.message-text {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.input-group {
+    margin-top: 20px;
+}
+
+/* Роздільні стилі для Bootstrap */
+.btn-primary-subtle {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+    .btn-primary-subtle:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+.send-button {
+    border-radius: 0 5px 5px 0;
+}
